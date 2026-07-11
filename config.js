@@ -23,7 +23,7 @@ const CONFIG = {
 
   // Shown INSIDE the site as a preview (not a new tab).
   // For a Google Form, add "?embedded=true" to the end of your form's normal link.
-  formsUrl: "https://docs.google.com/forms/d/1zKtvWxjJAwXvBo_jzgqnNwlUtMRDN7rsgMv1sdfUDlU/edit?usp=drive_web&ouid=104052909110918294604",
+  formsUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfhX1sp6wm_84WZ_p2utW3FwcIM-QbkARvAN0ChcrtOLCL7ZA/preview",
 
   // List of individual invoices. Add one line per invoice.
   // "name" = what shows in the sidebar list

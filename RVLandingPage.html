@@ -29,6 +29,7 @@
         <button class="nav-btn" data-view="admin">Admin Dashboard</button>
         <button class="nav-btn" data-view="forms">Forms</button>
         <button class="nav-btn" data-view="orders">Order Management</button>
+        <button class="nav-btn" data-view="settings">⚙️ Manage Links</button>
       </nav>
       <button id="lockBtn" class="lock-btn" title="Lock portal">🔒 Lock</button>
     </header>
@@ -54,6 +55,36 @@
       </section>
 
       <!-- ADMIN / ORDERS: these just open new tabs, no content view needed -->
+
+      <!-- SETTINGS / MANAGE LINKS VIEW -->
+      <section id="view-settings" class="view">
+        <div class="settings-wrap">
+          <h2>Manage Links</h2>
+          <p class="settings-note">
+            Changes here save to THIS browser only. To make changes visible on every device,
+            edit <code>config.js</code> and re-upload to GitHub instead.
+          </p>
+
+          <label>Admin Dashboard link (opens new tab)</label>
+          <input type="text" id="input-admin" placeholder="https://docs.google.com/spreadsheets/d/.../edit">
+
+          <label>Order Management link (opens new tab)</label>
+          <input type="text" id="input-orders" placeholder="https://docs.google.com/spreadsheets/d/.../edit#gid=...">
+
+          <label>Forms link (previews inline — remember to add ?embedded=true)</label>
+          <input type="text" id="input-forms" placeholder="https://docs.google.com/forms/d/e/.../viewform?embedded=true">
+
+          <h3>Invoices</h3>
+          <div id="invoiceEditRows"></div>
+          <button id="addInvoiceRow" class="secondary-btn">+ Add Invoice</button>
+
+          <div class="settings-actions">
+            <button id="saveSettings" class="save-btn">💾 Save Changes</button>
+            <button id="resetSettings" class="reset-btn">Reset to config.js defaults</button>
+          </div>
+          <p id="saveMsg" class="save-msg"></p>
+        </div>
+      </section>
 
     </main>
   </div>
