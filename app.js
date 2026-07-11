@@ -106,44 +106,19 @@ navButtons.forEach(btn => {
 });
 
 // ============================================================
-//  INVOICE LIST + PREVIEW (with caching)
+//  INVOICE LIST (opens each invoice in a NEW TAB, like Admin/Orders)
 // ============================================================
 const invoiceList = document.getElementById("invoiceList");
-const invoiceFramesContainer = document.getElementById("invoiceFrames");
-const invoicePlaceholder = document.getElementById("invoicePlaceholder");
-
-let loadedFrames = {}; // index -> iframe element, once loaded
-
-function showInvoice(index, invoice) {
-  Object.values(loadedFrames).forEach(f => f.classList.add("hidden"));
-  invoicePlaceholder.classList.add("hidden");
-
-  if (loadedFrames[index]) {
-    loadedFrames[index].classList.remove("hidden");
-    return;
-  }
-
-  const frame = document.createElement("iframe");
-  frame.className = "frame";
-  frame.src = invoice.url;
-  invoiceFramesContainer.appendChild(frame);
-  loadedFrames[index] = frame;
-}
 
 function renderInvoiceList() {
   invoiceList.innerHTML = "";
-  invoiceFramesContainer.innerHTML = "";
-  loadedFrames = {};
-  invoicePlaceholder.classList.remove("hidden");
 
-  effectiveConfig.invoices.forEach((invoice, index) => {
+  effectiveConfig.invoices.forEach((invoice) => {
     const item = document.createElement("button");
     item.className = "invoice-item";
     item.textContent = invoice.name;
     item.addEventListener("click", () => {
-      document.querySelectorAll(".invoice-item").forEach(el => el.classList.remove("active"));
-      item.classList.add("active");
-      showInvoice(index, invoice);
+      window.open(invoice.url, "_blank");
     });
     invoiceList.appendChild(item);
   });
