@@ -77,20 +77,25 @@ navButtons.forEach(btn => {
   btn.addEventListener("click", () => {
     const target = btn.dataset.view;
 
-    if (target === "admin") {
-      window.open(effectiveConfig.adminDashboardUrl, "_blank");
-      return;
-    }
-    if (target === "orders") {
-      window.open(effectiveConfig.orderManagementUrl, "_blank");
-      return;
-    }
-
     navButtons.forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
 
     views.forEach(v => v.classList.remove("active"));
     document.getElementById("view-" + target).classList.add("active");
+
+    if (target === "admin") {
+      const adminFrame = document.getElementById("adminFrame");
+      if (adminFrame.src !== effectiveConfig.adminDashboardUrl) {
+        adminFrame.src = effectiveConfig.adminDashboardUrl;
+      }
+    }
+
+    if (target === "orders") {
+      const ordersFrame = document.getElementById("ordersFrame");
+      if (ordersFrame.src !== effectiveConfig.orderManagementUrl) {
+        ordersFrame.src = effectiveConfig.orderManagementUrl;
+      }
+    }
 
     if (target === "forms") {
       const formsFrame = document.getElementById("formsFrame");
@@ -230,6 +235,10 @@ saveSettingsBtn.addEventListener("click", () => {
 
   const formsFrame = document.getElementById("formsFrame");
   formsFrame.src = "";
+  const adminFrame = document.getElementById("adminFrame");
+  adminFrame.src = "";
+  const ordersFrame = document.getElementById("ordersFrame");
+  ordersFrame.src = "";
 
   saveMsg.textContent = "✅ Saved! Changes are active now on this browser.";
 });

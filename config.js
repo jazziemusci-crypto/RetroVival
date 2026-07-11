@@ -13,13 +13,13 @@ const CONFIG = {
   password: "retrovival2026",
 
   // Opens in a NEW TAB when clicked
-  adminDashboardUrl: "https://docs.google.com/spreadsheets/d/1VdhAM2tUF3HQOMNBWpAY0R_dzD8VLQuPlZjNbfyt8PY/edit?usp=drive_link",
+  adminDashboardUrl: "https://docs.google.com/spreadsheets/d/1VdhAM2tUF3HQOMNBWpAY0R_dzD8VLQuPlZjNbfyt8PY/edit?gid=2032770637#gid=2032770637",
 
   // Opens in a NEW TAB when clicked
   // (This is the "Order Management" TAB inside your Admin Dashboard sheet.
   //  Right-click the "Order Management" tab in Google Sheets → "Copy link to sheet"
   //  and paste that full link here — it includes a #gid=... at the end.)
-  orderManagementUrl: "https://docs.google.com/spreadsheets/d/1c_zNBQRi30Ez6xcQNivXWXNx-BdXFHjnndp-0Th9V7s/edit?usp=drive_link",
+  orderManagementUrl: "https://docs.google.com/spreadsheets/d/1c_zNBQRi30Ez6xcQNivXWXNx-BdXFHjnndp-0Th9V7s/edit?gid=0#gid=0",
 
   // Shown INSIDE the site as a preview (not a new tab).
   // For a Google Form, add "?embedded=true" to the end of your form's normal link.

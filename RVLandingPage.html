@@ -49,12 +49,20 @@
         </div>
       </section>
 
+      <!-- ADMIN DASHBOARD VIEW -->
+      <section id="view-admin" class="view">
+        <iframe id="adminFrame" class="frame"></iframe>
+      </section>
+
       <!-- FORMS VIEW -->
       <section id="view-forms" class="view">
         <iframe id="formsFrame" class="frame"></iframe>
       </section>
 
-      <!-- ADMIN / ORDERS: these just open new tabs, no content view needed -->
+      <!-- ORDER MANAGEMENT VIEW -->
+      <section id="view-orders" class="view">
+        <iframe id="ordersFrame" class="frame"></iframe>
+      </section>
 
       <!-- SETTINGS / MANAGE LINKS VIEW -->
       <section id="view-settings" class="view">
@@ -65,10 +73,10 @@
             edit <code>config.js</code> and re-upload to GitHub instead.
           </p>
 
-          <label>Admin Dashboard link (opens new tab)</label>
-          <input type="text" id="input-admin" placeholder="https://docs.google.com/spreadsheets/d/.../edit">
+          <label>Admin Dashboard link (previews inline)</label>
+          <input type="text" id="input-admin" placeholder="https://docs.google.com/spreadsheets/d/.../edit#gid=...">
 
-          <label>Order Management link (opens new tab)</label>
+          <label>Order Management link (previews inline)</label>
           <input type="text" id="input-orders" placeholder="https://docs.google.com/spreadsheets/d/.../edit#gid=...">
 
           <label>Forms link (previews inline — remember to add ?embedded=true)</label>
