@@ -1,0 +1,146 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: #f5f3f4;
+  color: #2b2b2b;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hidden { display: none !important; }
+
+/* ---------- PASSWORD GATE ---------- */
+.gate {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #800020, #4d0013);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+.gate-box {
+  background: #fff;
+  padding: 40px 36px;
+  border-radius: 14px;
+  text-align: center;
+  width: 320px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+.gate-box h1 { color: #800020; margin-bottom: 6px; font-size: 24px; }
+.gate-box p { color: #666; margin-bottom: 20px; font-size: 14px; }
+.gate-box input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  margin-bottom: 14px;
+}
+.gate-box button {
+  width: 100%;
+  padding: 12px;
+  background: #800020;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.gate-box button:hover { background: #660019; }
+.error { color: #c0392b; font-size: 13px; margin-top: 10px; min-height: 16px; }
+
+/* ---------- APP SHELL ---------- */
+.app { height: 100vh; display: flex; flex-direction: column; }
+
+.topbar {
+  background: #800020;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  height: 60px;
+  flex-shrink: 0;
+  gap: 20px;
+}
+.brand { font-weight: 700; font-size: 18px; white-space: nowrap; }
+
+.nav { display: flex; gap: 6px; flex: 1; overflow-x: auto; }
+.nav-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  padding: 9px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.nav-btn:hover { background: rgba(255,255,255,0.12); }
+.nav-btn.active { background: #fff; color: #800020; font-weight: 600; border-color: #fff; }
+
+.lock-btn {
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.lock-btn:hover { background: rgba(255,255,255,0.25); }
+
+/* ---------- CONTENT ---------- */
+.content { flex: 1; overflow: hidden; position: relative; }
+
+.view { display: none; height: 100%; }
+.view.active { display: block; }
+
+/* Invoices split view */
+.split { display: flex; height: 100%; }
+.invoice-list {
+  width: 260px;
+  background: #fff;
+  border-right: 1px solid #e5e5e5;
+  overflow-y: auto;
+  padding: 10px;
+}
+.invoice-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  border: none;
+  background: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 4px;
+}
+.invoice-item:hover { background: #fdeef2; }
+.invoice-item.active { background: #800020; color: #fff; font-weight: 600; }
+
+.preview-pane { flex: 1; position: relative; background: #fafafa; }
+.placeholder {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 15px;
+  text-align: center;
+  padding: 20px;
+}
+
+.frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
