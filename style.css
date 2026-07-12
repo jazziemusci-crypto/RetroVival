@@ -247,3 +247,75 @@ body {
 .reset-btn:hover { background: #f5f5f5; }
 
 .save-msg { margin-top: 14px; font-size: 13px; color: #1a7a3c; font-weight: 600; }
+
+/* ============================================================
+   RESPONSIVE — MEDIUM (tablets, ≤768px)
+   ============================================================ */
+@media (max-width: 768px) {
+  .topbar {
+    padding: 0 14px;
+    gap: 12px;
+    height: 54px;
+  }
+  .brand { font-size: 16px; }
+  .nav-btn { padding: 8px 12px; font-size: 13px; }
+  .lock-btn { padding: 7px 10px; font-size: 12px; }
+
+  .gate-box { width: 90%; max-width: 320px; padding: 32px 24px; }
+
+  /* Invoice list becomes a horizontal scroll strip above the preview
+     instead of a fixed-width sidebar, so the preview pane keeps room */
+  .split { flex-direction: column; }
+  .invoice-list {
+    width: 100%;
+    max-height: 140px;
+    border-right: none;
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .invoice-item {
+    width: auto;
+    white-space: nowrap;
+    margin-bottom: 0;
+    margin-right: 6px;
+  }
+
+  .settings-wrap { padding: 20px 16px 50px; }
+
+  .invoice-edit-row { flex-wrap: wrap; }
+  .invoice-edit-row input.name-input { flex: 1 1 100%; }
+  .invoice-edit-row input.url-input { flex: 1 1 100%; }
+}
+
+/* ============================================================
+   RESPONSIVE — SMALL (phones, ≤480px)
+   ============================================================ */
+@media (max-width: 480px) {
+  .topbar {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px 12px;
+  }
+  .brand { flex: 1 1 auto; }
+  .nav {
+    order: 3;
+    width: 100%;
+    margin-top: 8px;
+  }
+  .lock-btn { order: 2; }
+
+  .gate-box { padding: 28px 20px; }
+  .gate-box h1 { font-size: 20px; }
+
+  .invoice-list { max-height: 110px; padding: 8px; }
+  .invoice-item { font-size: 13px; padding: 8px 10px; }
+
+  .settings-wrap h2 { font-size: 20px; }
+  .settings-wrap { padding: 16px 12px 40px; }
+
+  .settings-actions { flex-direction: column; }
+  .save-btn, .reset-btn { width: 100%; }
+}
